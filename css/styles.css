@@ -1,0 +1,122 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #323232;
+  border: none;
+}
+
+body {
+  background-image: url('../img/bg7.png');
+  /* background-size: auto; */
+  background-repeat: no-repeat;
+  /* position:absolute(left); */
+  height: 80vh; 
+   /* width: 90vw;  */
+  background-size: contain; 
+  /* width: 300px;  */
+
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+a {
+  font-size: .8rem;
+}
+
+a:hover {
+  color: #08558B;
+  /* border-color: #141414; */
+}
+
+/* container login */
+#login-container {
+  /* align-self: flex-start; */
+  background-color: #FFF;
+  margin-left: 69%;
+  /* margin-right: 50%; */
+  /* margin-top: 10%; */
+  width: 400px;
+  padding: 35px 30px;
+  margin-top: 20vh;
+  margin-right: 20vh;
+  border-radius: 10px;
+  text-align: center;
+  /* font-size: .8rem; */
+  /* box-shadow: 3px 3px 3px 1.5px rgba(0, 0, 0, 0.2); */
+  /* box-shadow: 0 0 1em blue; */
+  
+
+}
+
+/* formulário */
+form {
+  margin-top: 50px;
+  /* margin-bottom: 0px; */
+}
+
+h1{
+  text-align: left;
+}
+
+label, input {
+  
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+  font-size: .8rem;
+}
+
+input {
+  border-bottom: 2px solid #323232;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  
+}
+
+
+
+input:focus {
+  border-bottom: 2px solid #08558B;
+}
+
+#forgot-pass {
+  display: block;
+  text-align: right;
+  /* text-align: ; */
+  /* margin-bottom: 50%; */
+}
+
+input[type="submit"] {
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #08558B;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 30px;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #08558B;
+  border-color: #08558B;
+  font-weight: bold;
+}
+
+input[type="submit"]:hover {
+  background-color: #ffffff;
+  transition: .5s;
+  color: #08558B;
+  border: 1px solid #08558B;
+  
+  
+  /* border-style: initial ; */
+}
+
