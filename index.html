@@ -9,23 +9,80 @@
   <title>Login</title>
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
   <div id="login-container">
     <h1>Login</h1><br>
     <p>Olá! Insira usuário e senha para continuarmos.</p>
-    <form action="">
+    <form action="javascript:autentica()" id="form_id" method="get">
       <label for="email">Usuário</label>
       <input type="email" name="email" id="email" placeholder="Digite seu usuário" oninvalid="this.setCustomValidity('Por favor entre com um email válido')" autocomplete="off" >
 
       <label for="password">Senha</label> 
 
       <input type="password" name="password" id="password" placeholder="Digite sua senha">
-      <input type="submit" value="Login">
+      <input type="submit" value="Login" >
 
     </form>
     <a href="#" id="forgot-pass">Esqueceu a senha?</a>
 
   </div>
+  <script>
+    
+	 
+	   function autentica() {
+
+        var xhttp = new XMLHttpRequest();
+
+		var usuario = document.getElementById("email").value;
+    	var senha = document.getElementById("password").value;
+		
+
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4)  {
+			   if(this.status == 200) {
+					var json = JSON.parse(this.responseText);
+					storeLogin(json.nome);
+				//	alert("ACESSO OK : " );
+			
+					redirect(json.url);
+					console.log("redirecionado para "+json.url);
+					}
+				else
+				{
+					alert("ACESSO NEGADO : " + this.responseText);		
+				}	
+            }
+		
+
+        };
+
+        xhttp.open("GET", "/autentica?email="+usuario+"&passw="+senha, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("");
+
+    } 
+	
+	function redirect(url)
+	{	
+		window.parent.location.href=url;
+		window.parent.location.assign(url);
+		window.parent.location.replace(url);
+		
+	}
+	  function storeLogin(name)
+	  {
+		setCookieh("LOGIN",name); 
+	  }
+	
+	  
+	  function setCookieh(name,value) {
+	 		window.localStorage.setItem(name, value);
+	  }
+	  
+	 
+  	
+	</script>
 </body>
 </html>
