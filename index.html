@@ -17,12 +17,12 @@
     <p>Olá! Insira usuário e senha para continuarmos.</p>
     <form action="javascript:autentica()" id="form_id" method="get">
       <label for="email">Usuário</label>
-      <input type="email" name="email" id="email" placeholder="Digite seu usuário" oninvalid="this.setCustomValidity('Por favor entre com um email válido')" autocomplete="off" >
+      <input type="email" name="email" id="email" placeholder="Digite seu usuário" oninvalid="this.setCustomValidity('Por favor entre com um usuario válido')" autocomplete="off" >
 
       <label for="password">Senha</label> 
 
-      <input type="password" name="password" id="password" placeholder="Digite sua senha">
-      <input type="submit" value="Login" >
+      <input type="password" name="password" id="password" placeholder="Digite sua senha" autocomplete="off">
+      <input type="submit" value="Login" autocomplete="off" >
 
     </form>
     <a href="#" id="forgot-pass">Esqueceu a senha?</a>
